@@ -1,0 +1,27 @@
+<%- include('partials/head') %>
+    <title>Commenter - Login</title>
+</head>
+
+<body>
+    <%- include('partials/userbar') %>
+    <% if(!currentUser){ %>
+        <h1>LOGIN</h1>
+        <fieldset>
+            <legend>LOGIN</legend>
+            <form action="/login" method="post">
+                <label for="username">Enter username:</label>
+                <input type="text" name="username">
+                <label for="password">Enter password:</label>
+                <input type="password" name="password">
+                <button type="submit">LOGIN</button>
+            </form>
+        </fieldset>
+        <% } else { %>
+            <h1>LOGOUT</h1>
+            <form action="/logout" method="post">
+                <button type="submit">LOGOUT</button>
+            </form>
+            <% } %>
+</body>
+
+</html>

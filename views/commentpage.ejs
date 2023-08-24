@@ -1,0 +1,28 @@
+<%- include('partials/head') %>
+    <title>Commenter - Home</title>
+</head>
+
+<body>
+    <%- include('partials/userbar') %>
+    <h1><%= post.comment %></h1>
+    <h2>Author: <%= post.username %></h2>
+
+    <% if(currentUser && currentUser.username == post.username){ %>
+        <fieldset>
+            <legend>EDIT COMMENT</legend>
+            <form action="/comments/<%=post.id%>?_method=PATCH" method="post">
+                <label for="comment">Enter comment:</label>
+                <input type="text" name="comment">
+                <button type="submit">EDIT</button>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>DELETE COMMENT</legend>
+            <form action="/comments/<%=post.id%>?_method=DELETE" method="post">
+                <button type="submit">DELETE</button>
+            </form>
+        </fieldset>
+    <% } %>
+</body>
+
+</html>

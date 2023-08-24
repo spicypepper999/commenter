@@ -1,0 +1,22 @@
+<%- include('partials/head') %>
+    <title>Commenter - New</title>
+</head>
+
+<body>
+    <%- include('partials/userbar') %>
+    <h1>NEW COMMENT</h1>
+    <% if(currentUser){ %>
+        <fieldset>
+            <legend>NEW COMMENT</legend>
+            <form action="/comments/new" method="post">
+                <label for="comment">Enter comment:</label>
+                <input type="text" name="comment">
+                <button type="submit">SUBMIT</button>
+            </form>
+        </fieldset>
+        <% } else { %>
+            <p>Only users can post comments</p>
+            <% } %>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<%- include('partials/head') %>
+    <title>Commenter - Register</title>
+</head>
+
+<body>
+    <%- include('partials/userbar') %>
+    <h1>REGISTER</h1>
+    <fieldset>
+        <legend>REGISTER</legend>
+        <form action="/register" method="post">
+            <label for="username">Enter username:</label>
+            <input type="text" name="username">
+            <label for="password">Enter password:</label>
+            <input type="password" name="password" id="password">
+            <label for="password">Enter password again:</label>
+            <input type="password" id="passwordconfirm">
+            <button type="submit">REGISTER</button>
+        </form>
+    </fieldset>
+
+    <script>
+        let password = document.querySelector("#password");
+        let passwordconfirm = document.querySelector("#passwordconfirm");
+
+        function validatePassword(){
+            if(password.value != passwordconfirm.value){
+                passwordconfirm.setCustomValidity("Passwords must match");
+            }else{
+                passwordconfirm.setCustomValidity("");
+            }
+        }
+        password.onchange = validatePassword;
+        passwordconfirm.onchange = validatePassword;
+    </script>
+</body>
+
+</html>

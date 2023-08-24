@@ -1,0 +1,15 @@
+<nav>
+    <ul class="bar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/comments">Comments</a></li>
+        <% if(currentUser){ %>
+        <li><a href="/comments/new">Post</a></li>
+        <li style="float:right"><a href="/logout"> Logout </a></li>    
+        <li style="float:right"><a href="/user"> <%= currentUser.username %> </a></li>
+            <% } else { %>
+        <li style="float:right"><a href="/register"> Register </a></li>
+        <li style="float:right"><a href="/login"> Login </a></li>
+                <% } %>
+    </ul>
+</nav>
+<%- include('warning') %>
