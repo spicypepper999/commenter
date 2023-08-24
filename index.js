@@ -27,7 +27,7 @@ session.currentWarning = null;
 //let currentUser;
 //let currentWarning;
 
-const uri = "mongodb+srv://anton:Tqbfjotld16.@cluster0.ihrpfrg.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://webuser:webuserpassword12345678@cluster0.ihrpfrg.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri);
 // .then(() => {
 //     console.log("YES!")
